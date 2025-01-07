@@ -16,3 +16,12 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 
 Utilizzare https://www.drawio.com/ per la creazione dello schema.
 Esportare quindi il diagramma in jpg e caricarlo nella repo.
+
+=================================================================
+
+Esercizio di oggi: DB University
+nome repo: db-university
+Dopo aver importato lo schema allegato in un nuovo database nel vostro MySQL Workbench, eseguite le query del file allegato.
+
+Cosa consegnare?
+Dopo aver testato le vostre query con MySQL Workbench, riportatele in un file md e caricatelo nella vostra repo.
