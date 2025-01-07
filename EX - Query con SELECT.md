@@ -28,7 +28,8 @@ WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30;
 ```
 SELECT *
 FROM `courses`
-WHERE `period` = "I semestre" && `year` = 1;
+WHERE `period` = "I semestre"
+AND `year` = 1;
 ```
 
 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del
@@ -37,7 +38,8 @@ WHERE `period` = "I semestre" && `year` = 1;
 ```
 SELECT *
 FROM `exams`
-WHERE HOUR(`hour`) >= 14 && `date` = "2020-06-20";
+WHERE HOUR(`hour`) >= 14
+AND `date` = "2020-06-20";
 ```
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
@@ -76,7 +78,8 @@ VALUES ("5", "Federico", "Zorzi", "1999-11-05", "ZRZFRCR05P942G", "2025-01-07", 
 ```
 SELECT id
 FROM `teachers`
-WHERE `name` = "Pietro" && `surname`="Rizzo";
+WHERE `name` = "Pietro"
+AND `surname`="Rizzo";
 
 UPDATE `university`.`teachers` SET `office_number` = '126' WHERE (`id` = '58');
 ```
@@ -86,7 +89,8 @@ UPDATE `university`.`teachers` SET `office_number` = '126' WHERE (`id` = '58');
 ```
 SELECT id
 FROM `teachers`
-WHERE `name` = "Federico" && `surname`="Zorzi";
+WHERE `name` = "Federico"
+AND `surname`="Zorzi";
 
 DELETE FROM `university`.`students` WHERE (`id` = '5004');
 ```
