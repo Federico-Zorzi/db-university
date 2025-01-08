@@ -25,3 +25,8 @@ Dopo aver importato lo schema allegato in un nuovo database nel vostro MySQL Wor
 
 Cosa consegnare?
 Dopo aver testato le vostre query con MySQL Workbench, riportatele in un file md e caricatelo nella vostra repo.
+
+=================================================================
+
+Ciao ragazzi!
+Continuate a lavorare nella repo di ieri completando le nuove query
