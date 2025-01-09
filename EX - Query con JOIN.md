@@ -99,7 +99,7 @@ ON `course_teacher`.`teacher_id` = `teachers`.`id`;
    Matematica (54)
 
 ```
-SELECT *
+SELECT COUNT(DISTINCT `teachers`.`id`)
 FROM `teachers`
 
 INNER JOIN `course_teacher`
@@ -117,10 +117,27 @@ ON `degrees`.`department_id` = `departments`.`id`
 WHERE `departments`.`name` = "Dipartimento di Matematica";
 ```
 
-7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
-   per ogni esame, stampando anche il voto massimo. Successivamente,
-   filtrare i tentativi con voto minimo 18.```
+7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
 
 ```
+SELECT
+    `students`.`id` AS `student_id`,
+    `students`.`name` AS `student_name`,
+    `exams`.`id` AS `exams_id`,
+    COUNT(`exam_student`.`exam_id`) AS `num_attempts`,
+    MAX(`exam_student`.`vote`) AS `max_vote`
+FROM `students`
 
+INNER JOIN `exam_student`
+ON `students`.`id` = `exam_student`.`student_id`
+
+INNER JOIN `exams`
+ON `exam_student`.`exam_id` = `exams`.`id`
+
+INNER JOIN `courses`
+ON `exams`.`course_id` = `courses`.`id`
+
+GROUP BY `exam_student`.`student_id`, `courses`.`id`
+
+HAVING MAX(`exam_student`.`vote`) >= 18
 ```
